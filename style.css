@@ -1,0 +1,514 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --primary: #e63ee6;
+  --secondary: #4949b4;
+  --tertiary: #fff;
+  --quaternary: #4299c2;
+}
+
+/* NAVBAR START */
+nav {
+  display: flex;
+  background-image: linear-gradient(to right top, var(--primary), var(--secondary));
+  justify-content: space-around;
+  padding: 20px 0;
+  color: var(--tertiary);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: var(--tertiary);
+  font-size: 1.1em;
+  transition: 0.4s linear;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #ff00ff;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2111;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--tertiary);
+  border-radius: 3px;
+  transition: 0.4s linear;
+}
+
+/* hamburger menu start */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+/* hamburger menu end */
+
+/* NAVBAR END */
+
+/* HERO START*/
+
+.hero {
+  background-image: linear-gradient(to top left, var(--secondary), var(--primary));
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 840px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero h1 {
+  color: #00ffff;
+  margin-bottom: 29px;
+}
+
+.hero h2 {
+  color: #1c1cac;
+}
+
+.hero .detail button {
+  margin-top: 3.2rem;
+  background-color: var(--quaternary);
+  text-decoration: none;
+  border: none;
+  font-size: 30px;
+  border-radius: 4px;
+  padding: 5px 20px;
+}
+
+.hero .detail a {
+  text-decoration: none;
+  color: var(--tertiary);
+}
+
+.hero p {
+  color: var(--tertiary);
+  width: 83%;
+}
+
+.hero .foto img {
+  border-radius: 50%;
+  height: 370px;
+  border: 10px solid var(--tertiary);
+}
+
+/* Animation for Ditya's Role START */
+
+.hero .detail .wrapper .static-txt {
+  color: var(--tertiary);
+  font-size: 30px;
+  margin-bottom: -30px;
+}
+
+.hero .detail .dynamic-txts {
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+
+.hero .detail .dynamic-txts li {
+  color: #fc6d6d;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 500;
+  top: 0;
+  animation: slide 6s steps(4) infinite;
+  position: relative;
+}
+
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+
+.hero .detail .dynamic-txts li span {
+  position: relative;
+}
+
+.hero .detail .dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  animation: typing 1.5s steps(10) infinite;
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+/* Animation for Ditya's Role END */
+
+/* HERO END */
+
+/* ABOUT SECTION START */
+
+#About {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to top right, var(--primary), var(--secondary));
+  padding: 20px;
+}
+
+#About img {
+  width: 300px;
+  border: 2px solid var(--secondary);
+}
+
+#About .background {
+  color: var(--tertiary);
+  padding: 20px;
+}
+
+#About p {
+  width: 40%;
+}
+
+/* ABOUT SECTION END */
+
+/* PROJECT SECTIONS START */
+
+main {
+  background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  padding: 20px;
+}
+
+main h2 {
+  color: var(--tertiary);
+}
+
+#Projects {
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  justify-items: center;
+  margin-bottom: 200px;
+}
+
+#Projects .website {
+  background-color: var(--secondary);
+  border: 2px solid black;
+  padding: 20px;
+  width: 300px;
+  gap: 30px;
+  color: var(--tertiary);
+}
+
+#Projects .website img {
+  width: 300px;
+  border: 2px solid #010101;
+}
+
+#Projects .website p,
+h4,
+a {
+  margin-top: 20px;
+  color: var(--tertiary);
+}
+
+/* MY SKILLS START */
+.skills-bar {
+  width: 60%;
+  background-color: var(--tertiary);
+  border-radius: 10px;
+  margin: auto;
+  margin: 100px auto;
+  padding: 10px 30px;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+}
+
+.skills-bar .bar {
+  margin: 20px 0;
+}
+.skills-bar .bar:first-child {
+  margin-top: 0;
+}
+
+.skills-bar .bar .info {
+  margin-bottom: 5px;
+}
+
+.skills-bar .bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.skills-bar .bar .progress-line {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 1px rgba(255, 255, 255, 0.8);
+}
+
+.bar .progress-line span {
+  height: 100%;
+  width: 80%;
+  background: var(--secondary);
+  position: absolute;
+  border-radius: 10px;
+}
+
+.progress-line.html span {
+  width: 100%;
+}
+
+.progress-line.css span {
+  width: 80%;
+}
+
+.progress-line.jquery span {
+  width: 65%;
+}
+
+.progress-line.phyton span {
+  width: 70%;
+}
+
+.progress-line.mysql span {
+  width: 78%;
+}
+
+.bar .progress-line span::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  right: 0;
+  top: -10px;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+}
+.bar .progress-line span::after {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  color: var(--tertiary);
+  font-size: 12px;
+  font-weight: 500;
+  background: #000;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+
+.progress-line.html span::after {
+  content: "100%";
+}
+
+.progress-line.css span::after {
+  content: "80%";
+}
+
+.progress-line.jquery span::after {
+  content: "65%";
+}
+
+.progress-line.phyton span::after {
+  content: "70%";
+}
+
+.progress-line.mysql span::after {
+  content: "78%";
+}
+/* MY SKILLS END */
+
+/* PROJECT SECTIONS END */
+
+/* HOBBY SECTION START */
+
+main #Hobby {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  gap: 20px;
+  padding: 100px 0;
+  line-height: 25px;
+  text-align: center;
+  color: var(--tertiary);
+}
+
+main #Hobby img {
+  width: 200px;
+  height: 200px;
+  padding: 3.2rem;
+  border-radius: 50%;
+}
+
+main #Hobby p {
+  width: 300px;
+  padding: 20px;
+}
+
+/* HOBBY SECTION END */
+
+/* CONTACT SECTION START */
+
+#Contact {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background-image: linear-gradient(to left top, var(--quaternary), var(--primary));
+  background-color: var(--secondary);
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+}
+
+#Contact a {
+  text-decoration: none;
+}
+/* CONTACT SECTION END */
+
+/* FOOTER START */
+
+footer {
+  text-align: center;
+  background-color: rgb(21, 22, 95);
+  color: var(--tertiary);
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* FOOTER END */
+
+/* Bagian responsive*/
+
+/* For tablet screen */
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* For Mobile screen */
+@media screen and (max-width: 576px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 11.2rem;
+  }
+
+  .hero::after {
+    background: none;
+  }
+  .hero .foto img {
+    border-radius: 50%;
+    margin-top: 2.3rem;
+    height: 29vh;
+    border: 10px solid var(--tertiary);
+  }
+
+  .hero .detail {
+    padding: 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--secondary);
+    z-index: 0;
+    transform: translateY(-100%);
+    transition: 0.5s linear;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    opacity: 0.9;
+    z-index: 1;
+    transform: translateX(0);
+  }
+
+  #About {
+    flex-direction: column;
+  }
+  #About p {
+    width: 100%;
+  }
+}
